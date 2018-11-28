@@ -4,7 +4,7 @@ import com.dmall.paymentservice.apis.dto.PaymentCreationRequest;
 import com.dmall.paymentservice.apis.dto.PaymentResponse;
 import com.dmall.paymentservice.application.PaymentFactory;
 import com.dmall.paymentservice.domain.Payment;
-import com.dmall.paymentservice.infrastructure.repositories.dataentity.PaymentDataEntity;
+import com.dmall.paymentservice.repositories.dataentity.PaymentDataEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -16,16 +16,21 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableFeignClients
 @Configuration
 public class PaymentServiceApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(PaymentServiceApplication.class, args);
-    }
 
-    @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-            .select()
-            .apis(RequestHandlerSelectors.basePackage("com.dmall.paymentservice.apis"))
-            .paths(PathSelectors.any())
-            .build();
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(PaymentServiceApplication.class, args);
+  }
+
+  @Bean
+  public Docket createRestApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("com.dmall.paymentservice.apis"))
+        .paths(PathSelectors.any())
+        .build()
+        .pathMapping("/api");
+
+  }
+
+
 }

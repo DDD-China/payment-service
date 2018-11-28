@@ -1,6 +1,7 @@
 package com.dmall.paymentservice.apis.dto;
 
 import lombok.Data;
+
 import java.math.BigDecimal;
 
 @Data

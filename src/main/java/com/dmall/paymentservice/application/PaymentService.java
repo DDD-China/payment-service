@@ -1,15 +1,16 @@
 package com.dmall.paymentservice.application;
 
 import com.dmall.paymentservice.domain.Payment;
-import com.dmall.paymentservice.infrastructure.repositories.PaymentRepository;
-import com.dmall.paymentservice.infrastructure.repositories.dataentity.PaymentDataEntity;
+import com.dmall.paymentservice.repositories.PaymentRepository;
+import com.dmall.paymentservice.repositories.dataentity.PaymentDataEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Service
+@Component
 public class PaymentService {
+
     @Autowired
     private PaymentRepository paymentRepository;
 
