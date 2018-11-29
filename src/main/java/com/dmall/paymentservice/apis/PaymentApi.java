@@ -21,11 +21,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/payments")
 public class PaymentApi {
-    @Autowired
-    private PaymentService paymentService;
+    private final PaymentService paymentService;
+    private final PaymentAssembler paymentAssembler;
 
     @Autowired
-    private PaymentAssembler paymentAssembler;
+    public PaymentApi(PaymentService paymentService, PaymentAssembler paymentAssembler) {
+        this.paymentService = paymentService;
+        this.paymentAssembler = paymentAssembler;
+    }
 
     @ApiOperation("Add payment")
     @PostMapping

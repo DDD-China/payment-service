@@ -1,0 +1,3 @@
+[submodule "api/payment"]
+	path = api/payment
+	url = https://github.com/DDD-China/payment-service-contracts.git
