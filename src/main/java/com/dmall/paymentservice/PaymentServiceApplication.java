@@ -27,9 +27,7 @@ public class PaymentServiceApplication {
         .select()
         .apis(RequestHandlerSelectors.basePackage("com.dmall.paymentservice.apis"))
         .paths(PathSelectors.any())
-        .build()
-        .pathMapping("/api");
-
+        .build();
   }
 
 
