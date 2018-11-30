@@ -1,5 +1,7 @@
 package com.dmall.paymentservice.application;
 
+import com.dmall.paymentservice.domain.OrderPayStatus;
+import com.dmall.paymentservice.domain.OrderService;
 import com.dmall.paymentservice.domain.Payment;
 import com.dmall.paymentservice.repositories.PaymentRepository;
 import com.dmall.paymentservice.repositories.dataentity.PaymentDataEntity;
@@ -14,7 +16,12 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
+    @Autowired
+    private OrderService orderService;
+
     public void createPayment(Payment payment) {
+        orderService.updateOrderForPayment(payment.getOrderId(),
+            OrderPayStatus.builder().paid(true).build());
         paymentRepository.save(payment);
     }
 

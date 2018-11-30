@@ -1,8 +1,7 @@
 package com.dmall.paymentservice.repositories.dataentity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.Id;
 
 import javax.persistence.Column;
@@ -16,6 +15,8 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "payment")
 public class PaymentDataEntity {
   @Id
