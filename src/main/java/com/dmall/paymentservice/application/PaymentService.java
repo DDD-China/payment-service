@@ -20,7 +20,7 @@ public class PaymentService {
     @Autowired
     private OrderService orderService;
 
-    public void createPayment(Long orderId, BigDecimal amount, String method) {
+    public void createPayment(String orderId, BigDecimal amount, String method) {
         orderService.updateOrderPaymentStatus(orderId, OrderPaymentStatus.builder().paid(true).build());
         Payment payment = new Payment();
         payment.setAmount(amount);
@@ -29,7 +29,7 @@ public class PaymentService {
         paymentRepository.save(payment);
     }
 
-    public List<PaymentDataEntity> getPaymentsByOrderId(Long orderId) {
+    public List<PaymentDataEntity> getPaymentsByOrderId(String orderId) {
         return paymentRepository.getPaymentsByOrderId(orderId);
     }
 }

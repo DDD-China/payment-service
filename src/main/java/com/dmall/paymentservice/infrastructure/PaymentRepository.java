@@ -20,7 +20,7 @@ public class PaymentRepository {
         repository.save(paymentDataEntity);
     }
 
-    public List<PaymentDataEntity> getPaymentsByOrderId(Long orderId) {
+    public List<PaymentDataEntity> getPaymentsByOrderId(String orderId) {
         return repository.findByOrderId(orderId);
     }
 }

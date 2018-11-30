@@ -15,7 +15,7 @@ public class PaymentDataEntity {
     Long id;
 
     @Column(name = "order_id", nullable = false)
-    Long orderId;
+    String orderId;
 
     @Column(nullable = false)
     BigDecimal amount;

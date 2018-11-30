@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PaymentJpaRepository extends CrudRepository<PaymentDataEntity, Long> {
-    List<PaymentDataEntity> findByOrderId(Long orderId);
+    List<PaymentDataEntity> findByOrderId(String orderId);
 }

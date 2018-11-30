@@ -27,7 +27,7 @@ public class PaymentController {
     }
 
     @GetMapping
-    public List<PaymentResponse> getPaymentsByOrderId(@RequestParam Long  orderId){
+    public List<PaymentResponse> getPaymentsByOrderId(@RequestParam String  orderId){
         List<PaymentDataEntity> list = paymentService.getPaymentsByOrderId(orderId);
         return PaymentAssembler.toResponseList(list);
     }
