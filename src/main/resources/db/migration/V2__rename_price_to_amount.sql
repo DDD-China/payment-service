@@ -1,1 +1,0 @@
-ALTER TABLE `payment` CHANGE COLUMN `price` `amount` decimal(10, 2) NOT NULL;

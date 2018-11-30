@@ -11,7 +11,6 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
-        classpath('org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.1.RELEASE')
     }
 }
 
@@ -21,7 +20,6 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
-apply plugin: 'spring-cloud-contract'
 
 group = 'com.dmall'
 version = '0.1.0'
@@ -52,7 +50,6 @@ ext {
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.flywaydb:flyway-core')
     implementation('org.springframework.cloud:spring-cloud-starter-openfeign')
     runtimeOnly('mysql:mysql-connector-java')
     compileOnly('org.projectlombok:lombok')
@@ -60,7 +57,6 @@ dependencies {
     compile('io.springfox:springfox-swagger-ui:2.9.2')
     compile('org.modelmapper:modelmapper:1.1.1')
     compile('io.github.openfeign:feign-httpclient')
-    testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -68,9 +64,4 @@ dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
-}
-
-contracts {
-    packageWithBaseClasses = 'com.dmall.paymentservice.contracttest'
-    contractsDslDir = project.file("api")
 }
